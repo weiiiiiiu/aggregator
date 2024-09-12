@@ -93,6 +93,11 @@ proxies:
 
 
 
+- name: "本地"
+  type: http
+  server: 172,207.112.89
+  port: 8080
+
 - name: vless-reality-vision-zyz             
   type: vless
   server: 47.236.159.36                           
