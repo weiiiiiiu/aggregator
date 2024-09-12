@@ -1,0 +1,467 @@
+port: 7890
+allow-lan: true
+mode: rule
+log-level: info
+unified-delay: true
+global-client-fingerprint: chrome
+dns:
+  enable: true
+  listen: :53
+  ipv6: true
+  enhanced-mode: fake-ip
+  fake-ip-range: 198.18.0.1/16
+  default-nameserver: 
+    - 223.5.5.5
+    - 208.67.222.222
+    - 8.8.8.8
+  nameserver:
+    - https://dns.alidns.com/dns-query
+    - https://doh.pub/dns-query
+  fallback:
+    - https://1.0.0.1/dns-query
+    - tls://dns.google
+  fallback-filter:
+    geoip: true
+    geoip-code: CN
+    ipcidr:
+      - 240.0.0.0/4
+
+proxies:
+- name: vless-reality-vision-japan               
+  type: vless
+  server: 172.207.112.89                           
+  port: 20000                                
+  uuid: 0d9388c6-f709-42bd-ac8e-42b3e7504d21   
+  network: tcp
+  udp: true
+  tls: true
+  flow: xtls-rprx-vision
+  servername: www.yahoo.com                 
+  reality-opts: 
+    public-key: eRfXtbLGDuK4GUFlhZdUTs3oPrrivWglt94fiykhoWA    
+    short-id: '8a283e71'                    
+  client-fingerprint: chrome                  
+
+- name: vmess-ws-japan                         
+  type: vmess
+  server: www.visa.com.sg                        
+  port: 2053                                     
+  uuid: 0d9388c6-f709-42bd-ac8e-42b3e7504d21       
+  alterId: 0
+  cipher: auto
+  udp: true
+  tls: true
+  network: ws
+  servername: zpkk.me                    
+  ws-opts:
+    path: "0d9388c6-f709-42bd-ac8e-42b3e7504d21-vm"                             
+    headers:
+      Host: zpkk.me                     
+
+
+
+
+
+- name: hysteria2-japan                            
+  type: hysteria2                                      
+  server: zpkk.me                               
+  port: 20002                                
+  password: 0d9388c6-f709-42bd-ac8e-42b3e7504d21                          
+  alpn:
+    - h3
+  sni: zpkk.me                               
+  skip-cert-verify: false
+  fast-open: true
+
+- name: tuic5-japan                            
+  server: zpkk.me                      
+  port: 20003                                    
+  type: tuic
+  uuid: 0d9388c6-f709-42bd-ac8e-42b3e7504d21       
+  password: 0d9388c6-f709-42bd-ac8e-42b3e7504d21   
+  alpn: [h3]
+  disable-sni: true
+  reduce-rtt: true
+  udp-relay-mode: native
+  congestion-controller: bbr
+  sni: zpkk.me                                
+  skip-cert-verify: false
+
+
+
+
+
+
+
+- name: vless-reality-vision-zyz             
+  type: vless
+  server: 47.236.159.36                           
+  port: 20000                                
+  uuid: 6b516023-685b-45d9-8ed7-03142c331f87   
+  network: tcp
+  udp: true
+  tls: true
+  flow: xtls-rprx-vision
+  servername: www.yahoo.com                 
+  reality-opts: 
+    public-key: l8qo_Ajy3Hh-RmTMMKt0ETNl64dgeR3HYfNtj-Py0AQ    
+    short-id: '601056d4'                    
+  client-fingerprint: chrome                  
+
+- name: vmess-ws-zyz                        
+  type: vmess
+  server: www.visa.com.sg                        
+  port: 2053                                     
+  uuid: 6b516023-685b-45d9-8ed7-03142c331f87       
+  alterId: 0
+  cipher: auto
+  udp: true
+  tls: true
+  network: ws
+  servername: vps.geniuse.me                    
+  ws-opts:
+    path: "6b516023-685b-45d9-8ed7-03142c331f87-vm"                             
+    headers:
+      Host: vps.geniuse.me                     
+
+
+
+
+
+- name: hysteria2-zyz                            
+  type: hysteria2                                      
+  server: 47.236.159.36                               
+  port: 20002                                
+  password: 6b516023-685b-45d9-8ed7-03142c331f87                          
+  alpn:
+    - h3
+  sni: www.bing.com                               
+  skip-cert-verify: true
+  fast-open: true
+
+- name: tuic5-zyz                           
+  server: 47.236.159.36                      
+  port: 20003                                    
+  type: tuic
+  uuid: 6b516023-685b-45d9-8ed7-03142c331f87       
+  password: 6b516023-685b-45d9-8ed7-03142c331f87   
+  alpn: [h3]
+  disable-sni: true
+  reduce-rtt: true
+  udp-relay-mode: native
+  congestion-controller: bbr
+  sni: www.bing.com                                
+  skip-cert-verify: true
+
+
+- name: vless-reality-vision-zy             
+  type: vless
+  server: 8.219.143.231                           
+  port: 10001                                
+  uuid: a724734b-9dfa-421f-8c8b-7d29a7ef4d16   
+  network: tcp
+  udp: true
+  tls: true
+  flow: xtls-rprx-vision
+  servername: www.yahoo.com                 
+  reality-opts: 
+    public-key: p2ngE5VZtb7lXcxr7YPynjRIfEuA8SOwWaLwYPOO8lM    
+    short-id: '6e1aa394'                    
+  client-fingerprint: chrome                  
+
+- name: vmess-ws-zy                        
+  type: vmess
+  server: wei-hi.eu.org                        
+  port: 2053                                     
+  uuid: a724734b-9dfa-421f-8c8b-7d29a7ef4d16       
+  alterId: 0
+  cipher: auto
+  udp: true
+  tls: true
+  network: ws
+  servername: wei-hi.eu.org                    
+  ws-opts:
+    path: "a724734b-9dfa-421f-8c8b-7d29a7ef4d16-vm"                             
+    headers:
+      Host: wei-hi.eu.org                     
+
+
+
+
+
+- name: hysteria2-zy                           
+  type: hysteria2                                      
+  server: wei-hi.eu.org                               
+  port: 10003                                
+  password: a724734b-9dfa-421f-8c8b-7d29a7ef4d16                          
+  alpn:
+    - h3
+  sni: wei-hi.eu.org                               
+  skip-cert-verify: false
+  fast-open: true
+
+- name: tuic5-zy                           
+  server: wei-hi.eu.org                      
+  port: 10004                                    
+  type: tuic
+  uuid: a724734b-9dfa-421f-8c8b-7d29a7ef4d16       
+  password: a724734b-9dfa-421f-8c8b-7d29a7ef4d16   
+  alpn: [h3]
+  disable-sni: true
+  reduce-rtt: true
+  udp-relay-mode: native
+  congestion-controller: bbr
+  sni: wei-hi.eu.org                                
+  skip-cert-verify: false
+
+- name: vless-reality-vision-qc              
+  type: vless
+  server: 8.219.143.231                           
+  port: 10001                                
+  uuid: a724734b-9dfa-421f-8c8b-7d29a7ef4d16   
+  network: tcp
+  udp: true
+  tls: true
+  flow: xtls-rprx-vision
+  servername: www.yahoo.com                 
+  reality-opts: 
+    public-key: p2ngE5VZtb7lXcxr7YPynjRIfEuA8SOwWaLwYPOO8lM    
+    short-id: '6e1aa394'                    
+  client-fingerprint: chrome                  
+
+- name: vmess-ws-qc                        
+  type: vmess
+  server: wei-hi.eu.org                        
+  port: 2053                                     
+  uuid: a724734b-9dfa-421f-8c8b-7d29a7ef4d16       
+  alterId: 0
+  cipher: auto
+  udp: true
+  tls: true
+  network: ws
+  servername: wei-hi.eu.org                    
+  ws-opts:
+    path: "a724734b-9dfa-421f-8c8b-7d29a7ef4d16-vm"                             
+    headers:
+      Host: wei-hi.eu.org                     
+
+
+
+
+
+- name: hysteria2-qc                           
+  type: hysteria2                                      
+  server: wei-hi.eu.org                               
+  port: 10003                                
+  password: a724734b-9dfa-421f-8c8b-7d29a7ef4d16                          
+  alpn:
+    - h3
+  sni: wei-hi.eu.org                               
+  skip-cert-verify: false
+  fast-open: true
+
+- name: tuic5-qc                            
+  server: wei-hi.eu.org                      
+  port: 10004                                    
+  type: tuic
+  uuid: a724734b-9dfa-421f-8c8b-7d29a7ef4d16       
+  password: a724734b-9dfa-421f-8c8b-7d29a7ef4d16   
+  alpn: [h3]
+  disable-sni: true
+  reduce-rtt: true
+  udp-relay-mode: native
+  congestion-controller: bbr
+  sni: wei-hi.eu.org                                
+  skip-cert-verify: false
+
+
+
+
+
+proxy-groups:
+- name: 负载均衡
+  type: load-balance
+  url: https://www.gstatic.com/generate_204
+  interval: 300
+  strategy: round-robin
+  proxies:
+    - vless-reality-vision-japan                              
+    - vmess-ws-japan
+    - hysteria2-japan
+    - tuic5-japan
+    - vless-reality-vision-zyz                            
+    - vmess-ws-zyz
+    - hysteria2-zyz
+    - tuic5-zyz
+    - vless-reality-vision-zy                           
+    - vmess-ws-zy
+    - hysteria2-zy
+    - tuic5-zy
+    - vless-reality-vision-qc                           
+    - vmess-ws-qc
+    - hysteria2-qc
+    - tuic5-qc
+    
+
+
+
+
+
+- name: 自动选择
+  type: url-test
+  url: https://www.gstatic.com/generate_204
+  interval: 300
+  tolerance: 50
+  proxies:
+    - vless-reality-vision-japan                              
+    - vmess-ws-japan
+    - hysteria2-japan
+    - tuic5-japan
+    - vless-reality-vision-zyz                            
+    - vmess-ws-zyz
+    - hysteria2-zyz
+    - tuic5-zyz
+    - vless-reality-vision-zy                           
+    - vmess-ws-zy
+    - hysteria2-zy
+    - tuic5-zy
+    - vless-reality-vision-qc                           
+    - vmess-ws-qc
+    - hysteria2-qc
+    - tuic5-qc
+    
+
+- name: PROXY
+  type: select
+  proxies:
+    - 负载均衡                                         
+    - 自动选择
+    - DIRECT
+    - vless-reality-vision-japan                              
+    - vmess-ws-japan
+    - hysteria2-japan
+    - tuic5-japan
+    - vless-reality-vision-zyz                            
+    - vmess-ws-zyz
+    - hysteria2-zyz
+    - tuic5-zyz
+    - vless-reality-vision-zy                           
+    - vmess-ws-zy
+    - hysteria2-zy
+    - tuic5-zy
+    - vless-reality-vision-qc                           
+    - vmess-ws-qc
+    - hysteria2-qc
+    - tuic5-qc
+
+rule-providers:
+  reject:
+    type: http
+    behavior: domain
+    url: "https://cdn.jsdelivr.net/gh/Loyalsoldier/clash-rules@release/reject.txt"
+    path: ./ruleset/reject.yaml
+    interval: 86400
+
+  icloud:
+    type: http
+    behavior: domain
+    url: "https://cdn.jsdelivr.net/gh/Loyalsoldier/clash-rules@release/icloud.txt"
+    path: ./ruleset/icloud.yaml
+    interval: 86400
+
+  apple:
+    type: http
+    behavior: domain
+    url: "https://cdn.jsdelivr.net/gh/Loyalsoldier/clash-rules@release/apple.txt"
+    path: ./ruleset/apple.yaml
+    interval: 86400
+
+  google:
+    type: http
+    behavior: domain
+    url: "https://cdn.jsdelivr.net/gh/Loyalsoldier/clash-rules@release/google.txt"
+    path: ./ruleset/google.yaml
+    interval: 86400
+
+  proxy:
+    type: http
+    behavior: domain
+    url: "https://cdn.jsdelivr.net/gh/Loyalsoldier/clash-rules@release/proxy.txt"
+    path: ./ruleset/proxy.yaml
+    interval: 86400
+
+  direct:
+    type: http
+    behavior: domain
+    url: "https://cdn.jsdelivr.net/gh/Loyalsoldier/clash-rules@release/direct.txt"
+    path: ./ruleset/direct.yaml
+    interval: 86400
+
+  private:
+    type: http
+    behavior: domain
+    url: "https://cdn.jsdelivr.net/gh/Loyalsoldier/clash-rules@release/private.txt"
+    path: ./ruleset/private.yaml
+    interval: 86400
+
+  gfw:
+    type: http
+    behavior: domain
+    url: "https://cdn.jsdelivr.net/gh/Loyalsoldier/clash-rules@release/gfw.txt"
+    path: ./ruleset/gfw.yaml
+    interval: 86400
+
+  tld-not-cn:
+    type: http
+    behavior: domain
+    url: "https://cdn.jsdelivr.net/gh/Loyalsoldier/clash-rules@release/tld-not-cn.txt"
+    path: ./ruleset/tld-not-cn.yaml
+    interval: 86400
+
+  telegramcidr:
+    type: http
+    behavior: ipcidr
+    url: "https://cdn.jsdelivr.net/gh/Loyalsoldier/clash-rules@release/telegramcidr.txt"
+    path: ./ruleset/telegramcidr.yaml
+    interval: 86400
+
+  cncidr:
+    type: http
+    behavior: ipcidr
+    url: "https://cdn.jsdelivr.net/gh/Loyalsoldier/clash-rules@release/cncidr.txt"
+    path: ./ruleset/cncidr.yaml
+    interval: 86400
+
+  lancidr:
+    type: http
+    behavior: ipcidr
+    url: "https://cdn.jsdelivr.net/gh/Loyalsoldier/clash-rules@release/lancidr.txt"
+    path: ./ruleset/lancidr.yaml
+    interval: 86400
+
+  applications:
+    type: http
+    behavior: classical
+    url: "https://cdn.jsdelivr.net/gh/Loyalsoldier/clash-rules@release/applications.txt"
+    path: ./ruleset/applications.yaml
+    interval: 86400
+
+
+rules:
+  - RULE-SET,applications,DIRECT
+  - DOMAIN,clash.razord.top,DIRECT
+  - DOMAIN,yacd.haishan.me,DIRECT
+  - RULE-SET,private,DIRECT
+  - RULE-SET,reject,REJECT
+  - RULE-SET,icloud,DIRECT
+  - RULE-SET,apple,DIRECT
+  - RULE-SET,google,PROXY
+  - RULE-SET,proxy,PROXY
+  - RULE-SET,direct,DIRECT
+  - RULE-SET,lancidr,DIRECT
+  - RULE-SET,cncidr,DIRECT
+  - RULE-SET,telegramcidr,PROXY
+  - GEOIP,LAN,DIRECT
+  - GEOIP,CN,DIRECT
+  - MATCH,PROXY
+ 
